@@ -28,3 +28,27 @@ body {
     align-items: center;
     align-content: center;
 }
+
+.main-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: space-around;
+    justify-content: space-between;
+    min-height: 60vh;
+    padding-top: 2em;
+}
+
+.menu-row {
+    display: flex;
+    min-width: 100%;
+    justify-content: space-around;
+    min-height: 9em;
+}
+
+.menu-item {
+    max-width: 6em;
+    text-align: center;
+    font-family: Fantasma;
+    font-size: 2em;
+}
