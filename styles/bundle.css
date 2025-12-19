@@ -1,0 +1,30 @@
+@font-face {
+    font-family: Fantasma;
+    src: url(Fantasma.otf);
+}
+
+body {
+    padding: 0 6em;
+    color: white;
+    background-color: #16161d;
+    font-family: monospace;
+}
+
+.header {
+    display: flex;
+}
+
+.header h1 {
+    font-family: Fantasma;
+    min-width: 35%;
+    font-size: 3em;
+    letter-spacing: 0.15em;
+    color: #b2ffff;
+}
+
+.greeter {
+    height: 80%;
+    display: flex;
+    align-items: center;
+    align-content: center;
+}
