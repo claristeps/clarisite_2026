@@ -3,6 +3,10 @@
     src: url(Fantasma.otf);
 }
 
+:root {
+    --parallax-strength: 5px;
+}
+
 body {
     padding: 0 6em;
     color: white;
@@ -37,6 +41,10 @@ body {
     justify-content: space-between;
     min-height: 60vh;
     padding-top: 2em;
+
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    transition: transform 0.06s linear;
 }
 
 .menu-row {
@@ -51,4 +59,13 @@ body {
     text-align: center;
     font-family: Fantasma;
     font-size: 2em;
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease;
+    will-change: transform;
+}
+
+.menu-item:hover {
+    color: #b2ffff;
+    transform: translateY(-4px);
 }

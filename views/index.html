@@ -42,7 +42,7 @@
             </div>
             <div class="menu-row">
                 <div class="menu-item"><s>My Writing</s></div>
-                <div class="menu-item"><s>My Games</s></div>
+                <div class="menu-item"><s>My Projects</s></div>
             </div>
             <div class="menu-row">
                 <div class="menu-item"><s>Journal</s></div>
@@ -58,4 +58,58 @@
             </div>
         </div>
     </body>
+    <script>
+        (function () {
+            const root = document.querySelector(".main-menu");
+            const strength =
+                parseFloat(
+                    getComputedStyle(document.documentElement).getPropertyValue(
+                        "--parallax-strength",
+                    ),
+                ) || 10;
+
+            let mouseX = 0,
+                mouseY = 0;
+            let targetX = 0,
+                targetY = 0;
+            let rafId = null;
+
+            function onMouseMove(e) {
+                const w = window.innerWidth;
+                const h = window.innerHeight;
+
+                const nx = (e.clientX / w) * 2 - 1;
+                const ny = (e.clientY / h) * 2 - 1;
+
+                targetX = -nx * strength;
+                targetY = -ny * strength;
+
+                if (!rafId) rafId = requestAnimationFrame(tick);
+            }
+
+            function tick() {
+                mouseX += (targetX - mouseX) * 0.12;
+                mouseY += (targetY - mouseY) * 0.12;
+
+                root.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+                if (
+                    Math.abs(targetX - mouseX) > 0.1 ||
+                    Math.abs(targetY - mouseY) > 0.1
+                ) {
+                    rafId = requestAnimationFrame(tick);
+                } else {
+                    rafId = null;
+                }
+            }
+
+            window.addEventListener("mousemove", onMouseMove, {
+                passive: true,
+            });
+
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+                window.removeEventListener("mousemove", onMouseMove);
+                root.style.transform = "none";
+            }
+        })();
+    </script>
 </html>
