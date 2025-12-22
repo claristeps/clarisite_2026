@@ -66,6 +66,37 @@ body {
 }
 
 .menu-item:hover {
-    color: #b2ffff;
     transform: translateY(-4px);
+}
+
+.menu-item a,
+a:visited {
+    color: white;
+}
+
+.menu-item a:hover {
+    color: #b2ffff;
+}
+
+article {
+    padding-top: 3em;
+    font-size: 1.5em;
+}
+
+article h1 {
+    font-family: Fantasma;
+}
+
+.date-informer {
+    font-size: 0.75em;
+    opacity: 0.5;
+}
+
+.send-home a {
+    font-size: 0.75em;
+    color: #b2ffff;
+}
+
+.send-home a:visited {
+    color: #b2ffff;
 }

@@ -1,0 +1,11 @@
+---
+layout: article
+title: Clariblog
+---
+
+<h1>Welcome to my Blog!!!</h1>
+<ul>
+    {%- for post in collections.post -%}
+    <li><a href="{{post.page.url}}">{{ post.data.title }} ({{post.data.date}})</a></li>
+    {%- endfor -%}
+</ul>
