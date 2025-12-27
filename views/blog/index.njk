@@ -7,6 +7,6 @@ description: "All my posts go here."
 <h1>Welcome to my Blog!!!</h1>
 <ul>
     {%- for post in collections.post -%}
-    <li><a href="{{post.page.url}}">{{ post.data.title }} ({{post.data.date}})</a></li>
+    <li><a href="{{post.page.url}}">{{ post.data.title }} ({{post.data.date | fmtDate("yyyy-LL-dd HH:mm")}})</a></li>
     {%- endfor -%}
 </ul>

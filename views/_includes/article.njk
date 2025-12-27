@@ -28,7 +28,7 @@
     <body>
         <article>
             <span class="send-home"><a href="/">Go Home</a></span> |
-            <span class="date-informer">{{date}}</span>
+            <span class="date-informer">{{date | fmtDate("yyyy-LL-dd HH:mm")}}</span>
             {{ content | safe }}
         </article>
     </body>
